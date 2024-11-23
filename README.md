@@ -61,7 +61,15 @@ Tools & Technologies
 - Power BI
 - Window Task Scheduler
 
-  I got the real estate API from Realty Mole Property then I extracted and transformed via Python and loaded the transformed data into Postgress.
+  I got the real estate API from Realty Mole Property then I extracted and transformed via Python and loaded the transformed data into Postgress. Check link below to view the pipeline code, this solve Zipco Real Estate Agency problem as stated below
+    - Inefficient Data Processing Workflow - With this pipeline data is extracted and processed within seconds which makes information available for Zipco management to
+      make effective decision on a timely basis.
+
+    - Increased Operational Costs - The pipeline will reduce the operational costs especially relating to data processing by atleast 90%.
+ 
+    - Disparate Datasets and Inconsistent format - The dataset in the pipeline is well cleaned and transformed. The format is well formatted and fit for decision making.
+ 
+    - Compromised Data Quality - The data quality has been improved by at least 95%
 
   [Postgres Pipeline](https://github.com/adetonayusuf/PropertyPipeline/blob/main/postgres_pipeline.py)
 

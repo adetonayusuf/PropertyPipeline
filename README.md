@@ -51,3 +51,5 @@ Aim of Project
 - Data Cleaning and Transformation
 - Database Loading
 - Automation
+
+![Data Atchitecture](https://github.com/adetonayusuf/PropertyPipeline/blob/main/Data%20Architecture2.png)

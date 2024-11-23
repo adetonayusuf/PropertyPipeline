@@ -63,7 +63,7 @@ Tools & Technologies
 
   I got the real estate API from Realty Mole Property then I extracted and transformed via Python and loaded the transformed data into Postgress.
 
-  ![Postgres Pipeline](https://github.com/adetonayusuf/PropertyPipeline/blob/main/postgres_pipeline.py)
+  """[Postgres Pipeline](https://github.com/adetonayusuf/PropertyPipeline/blob/main/postgres_pipeline.py)"""
 
   Below is the data modeling
 

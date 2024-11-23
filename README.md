@@ -73,6 +73,10 @@ Tools & Technologies
 
   [Postgres Pipeline](https://github.com/adetonayusuf/PropertyPipeline/blob/main/postgres_pipeline.py)
 
+  Below is the ERD from Schema in Postgres that the automated flow from the pipeline into Postgres
+
+  ![ERD from Schema](https://github.com/adetonayusuf/PropertyPipeline/blob/main/ERD%20for%20Schema%20for%20Postgres%20SQL.png)
+
   Below is the data modeling
 
   ![Data Modelling](https://github.com/adetonayusuf/PropertyPipeline/blob/main/Data%20Modelling.jpeg)

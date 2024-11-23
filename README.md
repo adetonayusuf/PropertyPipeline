@@ -61,4 +61,6 @@ Tools & Technologies
 - Power BI
 - Window Task Scheduler
 
-  I got the real estate API from Realty Mole Property then I extracted and transformed via Python and loaded the transformed data into Postgress. Below is the data modeling 
+  I got the real estate API from Realty Mole Property then I extracted and transformed via Python and loaded the transformed data into Postgress. Below is the data modeling
+
+  ![Data Modelling](https://github.com/adetonayusuf/PropertyPipeline/blob/main/Data%20Modelling.jpeg)

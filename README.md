@@ -83,3 +83,6 @@ Tools & Technologies
 
   I amported the data directly from Postgres to Power BI to building sales performance dashboard to show how much property was sold as at when and the location of each property sold and some other metrics were considered. Below is the dashboard
   ![Zipco Property Sales Dashboard](https://github.com/adetonayusuf/PropertyPipeline/blob/main/Zipco%20Real%20Estate%20Agency%20Dashboard.png)
+
+  I automated the refresh process using Task Schedular, this task will be run on a weekly basis to run the pipeline and also update the power Bi, so as to get the updated report on a weekly basis.
+  ![Task Scheduler](https://github.com/adetonayusuf/PropertyPipeline/blob/main/Task%20Scheduler.png)

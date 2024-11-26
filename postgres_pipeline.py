@@ -1,10 +1,11 @@
 import requests
 import pandas as pd
-import psycopg
+import psycopg2
 import csv
+import http.client
 import json
-import os
 
+# Extraction Layer
 url = "https://realty-mole-property-api.p.rapidapi.com/randomProperties"
 
 querystring = {"limit":"100000"}
@@ -60,6 +61,7 @@ propertyrecords_df.fillna({
 # Create the fact table
 fact_columns = ['addressLine1', 'city', 'state', 'zipCode', 'formattedAddress', 'squareFootage', 'yearBuilt', 'bathrooms', 'bedrooms', 'lotSize', 'propertyType', 'longitude', 'latitude']
 fact_table = propertyrecords_df[fact_columns]
+fact_table.index.name='property_id'
 
 # Create location Dimension
 location_dim = propertyrecords_df[['addressLine1', 'city', 'state', 'zipCode', 'county', 'longitude', 'latitude']].drop_duplicates().reset_index(drop=True)
@@ -102,6 +104,7 @@ def create_tables():
                             DROP TABLE IF EXISTS zapbank.features_dim;
 
                             CREATE TABLE zapbank.fact_table(
+                                property_id SERIAL PRIMARY KEY,
                                 addressLine1 VARCHAR(255),
                                 city VARCHAR(100),
                                 state VARCHAR(100),
@@ -176,7 +179,6 @@ def load_data_from_csv_to_table(csv_path, table_name):
     finally:
         cursor.close()
         conn.close()
-
 
 # Fact table path
 fact_csv_path = r'C:\Users\olalekan\Downloads\Data Engineering\Amdari\Projects -Real Estate Data Evolution Streamlining Property Records Management with an Efficient PostgresSQL ETL Pipeline for Zipco\property_fact.csv'

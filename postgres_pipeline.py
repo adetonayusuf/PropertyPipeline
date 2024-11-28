@@ -87,7 +87,7 @@ def get_db_connection():
         host='localhost',
         database='postgres',
         user='postgres',
-        password='School1.'
+        password='********'
     )
     return connection
 conn = get_db_connection()

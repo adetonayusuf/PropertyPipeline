@@ -56,12 +56,15 @@ Aim of Project
 
 Tools & Technologies
 
-- Python
-- Postgres
-- Power BI
-- Window Task Scheduler
+- RapidAPI: This is used to extract real estate data.
+- Python: For data extraction, transformation, and loading (ETL process).
+- Postgres: A relational database for storing the property data.
+- Power BI: Data visualisation
+- Windows Task Scheduler / Cron: For scheduling periodic tasks to extract and load data.
+- GitHub: For version control and documentation.
 
-  I got the real estate API from Realty Mole Property then I extracted and transformed via Python and loaded the transformed data into Postgress. Check link below to view the pipeline code, this solve Zipco Real Estate Agency problem as stated below
+  I got the real estate API from Realty Mole Property then I extracted and transformed via Python and loaded the transformed data into Postgress. Check link below to view 
+  the pipeline code, this solve Zipco Real Estate Agency problem as stated below
     - Inefficient Data Processing Workflow - With this pipeline data is extracted and processed within seconds which makes information available for Zipco management to
       make effective decision on a timely basis.
 
@@ -77,12 +80,33 @@ Tools & Technologies
 
   ![ERD from Schema](https://github.com/adetonayusuf/PropertyPipeline/blob/main/ERD%20for%20Schema%20for%20Postgres%20SQL.png)
 
+  Data Modeling
+  
+Create a Star Schema:
+Fact Table: Central table containing metrics like property sales, area, bedrooms, etc.
+Dimension Tables: Reference tables for location, features, and sales details.
+
+Schema Design:
+Location Dimension: Attributes like county, state, zipCode.
+
+Features Dimension: Attributes like propertyType, zoning, features.
+
+Sales Dimension: Attributes like sales_id, lastSalesDate, lastSalePrice etc
+
+Fact Table: Links the dimensions table using their foreign keys
+
   Below is the data modeling
 
-  ![Data Modelling](https://github.com/adetonayusuf/PropertyPipeline/blob/main/Data%20Modelling.jpeg)
+  ![Data-Modelling](https://github.com/adetonayusuf/PropertyPipeline/blob/main/DataModelling.jpg)
 
-  I amported the data directly from Postgres to Power BI to building sales performance dashboard to show how much property was sold as at when and the location of each property sold and some other metrics were considered. Below is the dashboard
+  I imported the data directly from Postgres to Power BI to building sales performance dashboard to show how much property was sold as at when and the location of each property sold and some other metrics were considered. Below is the dashboard
   ![Zipco Property Sales Dashboard](https://github.com/adetonayusuf/PropertyPipeline/blob/main/Zipco%20Real%20Estate%20Agency%20Dashboard.png)
 
-  I automated the refresh process using Task Schedular, this task will be run on a weekly basis to run the pipeline and also update the power Bi, so as to get the updated report on a weekly basis.
+Task Scheduler:
+Open Task Scheduler.
+Create a new task, and set the trigger to run the Python ETL scripts & Power BI dashboard at a specified time (e.g., daily).
+
+Set the action to run the Python script (python path_to_script.py) .& Power BI dashboard
+  
+I automated the refresh process using Task Schedular, this task will be run on a weekly basis to run the pipeline and also update the power Bi, so as to get the updated report on a weekly basis.
   ![Task Scheduler](https://github.com/adetonayusuf/PropertyPipeline/blob/main/Task%20Scheduler.png)

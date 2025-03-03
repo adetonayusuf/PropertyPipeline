@@ -100,6 +100,8 @@ Fact Table: Links the dimensions table using their foreign keys
   ![Data-Modelling](https://github.com/adetonayusuf/PropertyPipeline/blob/main/DataModelling.jpg)
 
   I imported the data directly from Postgres to Power BI to building sales performance dashboard to show how much property was sold as at when and the location of each property sold and some other metrics were considered. Below is the dashboard
+
+  
   ![Zipco Property Sales Dashboard](https://github.com/adetonayusuf/PropertyPipeline/blob/main/Zipco%20Real%20Estate%20Agency%20Dashboard.png)
 
 Task Scheduler:
